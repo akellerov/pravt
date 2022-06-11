@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pravt запчасти</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/chief-slider.min.css">
+  <link rel="stylesheet" href="./js/zxc.js">
+  <script defer src="./js/chief-slider.min.js"></script>
+</head>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slider = new ChiefSlider('.slider', {
+      loop: true,
+      autoplay: true,
+      interval: 7000,
+    });
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slider2 = new ChiefSlider('.slider2', {
+      loop: true,
+      autoplay: true,
+      interval: 7000,
+    });
+  });
+</script>
+<script>
+  /* конфигурация */
+  let width = 378; // ширина картинки
+  let count = 1; // видимое количество изображений
+  
+  let list = populiarn.querySelector('ul');
+  let listElems = populiarn.querySelectorAll('li');
+  
+  let position = 0; // положение ленты прокрутки
+  
+  populiarn.querySelector('.buttonleft').onclick = function() {
+  // сдвиг влево
+  position += width * count;
+  // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
+  position = Math.min(position, 0)
+  list.style.marginLeft = position + 'px';
+  };
+  
+  populiarn.querySelector('.buttonright').onclick = function() {
+  if(position > -1134)
+  {
+  // сдвиг вправо
+  position -= width * count;
+  // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
+  position = Math.max(position, -width * (listElems.length - count));
+  list.style.marginLeft = position + 'px';
+  }
+  };
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  document.getElementById("topBtn").style.display = "block";
+  } else {
+  document.getElementById("topBtn").style.display = "none";
+  }
+  };
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+  };
+  </script>
+<body>
+  <header class="header">
+    <div class="wrapper">
+      <div class="wrapper_header">
+        <div class="header_logo">
+          <a href="/" class="hearder_logo-link">
+            <img src="./img/svg/Лого.svg" alt="Pravt" class="header_logo-pic">
+          </a>
+        </div>
+        <div class="header_info">
+          <p class="header_info-text">Продажа запасных частей
+            ГАЗ, ВАЗ, ПАЗ, УАЗ, КАМАЗ
+          </p>
+        </div>
+        <div class="header_contacts">
+          <div class="header_contacts-background">
+          </div>
+          <img src="./img/svg/Vector.svg" alt="1" class="header_contacts_1-svg">
+          <div class="hearder_contacts_1-text">
+            <p class="header_contacts_1-text_p1">Отдел продаж:</p>
+            <p class="header_contacts_1-text_p2">7 (831) 418-58-57</p>
+            <p class="header_contacts_1-text_p3">7 (831) 418-58-56</p>
+          </div>
+          <img src="./img/svg/Group 287.svg" alt="2" class="header_contacts_2-svg">
+          <div class="hearder_contacts_2-text">
+            <p class="header_contacts_2-text_p1">Время работы:</p>
+            <p class="header_contacts_2-text_p2">8:30 - 16:30</p>
+            <p class="header_contacts_2-text_p3">сб,вс - выходной</p>
+          </div>
+          <img src="./img/svg/Group 288.svg" alt="3" class="header_contacts_3-svg">
+          <div class="header_contacts_3-text">
+            <p class="header_contacts_3-text_p1">Адрес:</p>
+            <p class="header_contacts_3-text_p2">Нижний Новгород Чаадаева 1у\1</p>
+            <a href="https://www.google.com/maps/place/%D0%93%D1%80%D0%BE%D0%B4%D0%BD%D0%BE/data=!4m2!3m1!1s0x46dfd64beac55d1d:0xf013fd26569718c0?sa=X&ved=2ahUKEwj6zaj-7oT4AhWKzKQKHf2VBb0Q8gF6BAgHEAE"
+              target="_blank" class="">
+              <p class="header_contacts_3-text_p3">Схема проезда</p>
+            </a>
+          </div>
+        </div>
+        <button class="bt1">
+          <img src="./img/svg/Group 284.svg" alt="каталог" class="bt1-svg">
+          <p class="bt1-text">Каталог</p>
+        </button>
+        <nav class="header_nav">
+          <ul class="header_list">
+            <li class="header_item">
+              <a href="#!" class="header_link">Главная</a>
+            </li>
+            <li class="header_item">
+              <a href="#!" class="header_link">о компании</a>
+            </li>
+            <li class="header_item">
+              <a href="#!" class="header_link">партнерам</a>
+            </li>
+            <li class="header_item">
+              <a href="#!" class="header_link">новости</a>
+            </li>
+            <li class="header_item">
+              <a href="#!" class="header_link">контакты</a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+
+
+  <main class="main">
+    <div class="container_slider">
+
+      <div class="slider">
+        <div class="slider__wrapper">
+          <div class="slider__items">
+            <div class="slider__item">
+              <!-- Контент 1 слайда -->
+              <img src="./img/svg/Mask group.svg" alt="" class="">
+              <p class="slider__items_text-1">Автозапчасти</p>
+              <p class="slider__items_text-2">для автомобилей марок ГАЗ, ВАЗ, КАМАЗ, ПАЗ и УАЗ</p>
+              <button class="bt2">
+                <img src="./img/svg/Arrow 1.svg" alt="bt2-svg" class="bt2-svg">
+                <p class="bt2_text">перейти</p>
+              </button>
+            </div>
+            <div class="slider__item">
+              <!-- Контент 2 слайда -->
+              <img src="./img/svg/Mask group (1).svg" alt="" class="">
+              <p class="slider__items_text-1">Трансмиссия</p>
+              <p class="slider__items_text-2">для автомобилей марок ГАЗ, ВАЗ, КАМАЗ, ПАЗ и УАЗ</p>
+              <button class="bt2">
+                <img src="./img/svg/Arrow 1.svg" alt="bt2-svg" class="bt2-svg">
+                <p class="bt2_text">перейти</p>
+              </button>
+            </div>
+            <div class="slider__item">
+              <!-- Контент 3 слайда -->
+              3
+            </div>
+            <div class="slider__item">
+              <!-- Контент 4 слайда -->
+              4
+            </div>
+            <div class="slider__item">
+              <!-- Контент 5 слайда -->
+              5
+            </div>
+          </div>
+        </div>
+        <ol class="slider__indicators">
+          <li data-slide-to="0"></li>
+          <li data-slide-to="1"></li>
+          <li data-slide-to="2"></li>
+          <li data-slide-to="3"></li>
+          <li data-slide-to="4"></li>
+        </ol>
+      </div>
+    </div>
+    <p class="kt-text">Продажа запасных частей для авто</p>
+    <div class="kt-container">
+      <div class="grid-items">
+ <!-- Контент 1 -->
+        <div class="grid-item">
+          <div class="grid-item-inner">
+
+            <div class="grid-item-bg"></div>
+            <div class="grid-item-colorstrip"></div>
+            <h3 class="grid-item-h3">Двигатель</h3>
+            <img src="./img/Двигатель 1.png" alt="" class="grid-item-img">
+          
+            <div class="grid-item-text">
+              <span>
+            <p>Картеры масляные</p>
+            <p>Крышки клапанов</p>
+            <p>Насосы масляные</p>
+          </span>
+          </div>
+        </div>
+        </div>
+ <!-- Контент 2 -->
+        <div class="grid-item">
+          <div class="grid-item-inner">
+
+            <div class="grid-item-bg"></div>
+            <div class="grid-item-colorstrip"></div>
+            <h3 class="grid-item-h3">Система питания</h3>
+            <img src="./img/svg/Форсунки 1.svg" alt="" class="grid-item-img">
+
+            <div class="grid-item-text">
+            <p>Вентиляторы охлаждения</p>
+            <p>Муфты вентилятора охлаждения</p>
+           </div>
+          </div>
+        </div>
+ <!-- Контент 3 -->
+        <div class="grid-item">
+          <div class="grid-item-inner">
+
+            <div class="grid-item-bg"></div>
+            <div class="grid-item-colorstrip"></div>
+            <h3 class="grid-item-h3">Система охлаждения</h3>
+            <img src="./img/Вентилятор 1.png" alt="" class="grid-item-img">
+
+            <div class="grid-item-text">
+            <p>Вентиляторы охлаждения</p>
+            <p>Муфты вентилятора охлаждения</p>
+           </div>
+          </div>
+        </div>
+ <!-- Контент 4 -->
+        <div class="grid-item">
+          <div class="grid-item-inner">
+
+            <div class="grid-item-bg"></div>
+            <div class="grid-item-colorstrip"></div>
+            <h3 class="grid-item-h3">Сцепление</h3>
+            <img src="./img/svg/Сцепление 1.svg" alt="" class="grid-item-img">
+
+            <div class="grid-item-text">
+            <p>Диски и комплекты сцепления</p>
+            <p>Маховики двигателя</p>
+            <p>Цилиндры сцепления</p>
+            <p>Тормозные барабаны и колодки</p>
+            <p>Тормозные диски и колодки</p>
+           </div>
+          </div>
+        </div>
+ <!-- Контент 5 -->        
+        <div class="grid-item">
+          <div class="grid-item-inner">
+
+            <div class="grid-item-bg"></div>
+            <div class="grid-item-colorstrip"></div>
+            <h3 class="grid-item-h3">Коробка передач</h3>
+            <img src="./img/коробка передач 1.png" alt="" class="grid-item-img">
+
+            <div class="grid-item-text">
+              <p>Диски и комплекты сцепления</p>
+              <p>Маховики двигателя</p>
+              <p>Цилиндры сцепления</p>
+              <p>Тормозные барабаны и колодки</p>
+              <p>Тормозные диски и колодки</p>
+           </div>
+          </div>
+        </div>
+ <!-- Контент 6 -->        
+        <div class="grid-item">
+          <div class="grid-item-inner">
+
+            <div class="grid-item-bg"></div>
+            <div class="grid-item-colorstrip"></div>
+            <h3 class="grid-item-h3">Карданный вал</h3>
+            <img src="./img/svg/2022-04-22_11-08-57 1 1 (Traced).svg" alt="" class="grid-item-img">
+
+            <div class="grid-item-text">
+            <p>Комплекты ГРМ</p>
+            <p>Механизмы натяжения</p>
+            <p>Ролики</p>
+            <p>Ремкомплекты механизма натяжителя</p>
+            <p>Ремни приводные и ГРМ</p>
+           </div>
+          </div>
+        </div>
+ <!-- Контент 7 -->        
+        <div class="grid-item">
+          <div class="grid-item-inner">
+
+            <div class="grid-item-bg"></div>
+            <div class="grid-item-colorstrip"></div>
+            <h3 class="grid-item-h3">Мост передний и задний</h3>
+            <img src="./img/мост передний и задний 1.png" alt="" class="grid-item-img">
+
+            <div class="grid-item-text">
+            <p>Вентиляторы отопителя</p>
+            <p>Насосы дополнительные</p>
+            <p>Насосы дополнительные</p>
+           </div>
+          </div>
+        </div>
+ <!-- Контент 8 -->        
+        <div class="grid-item">
+          <div class="grid-item-inner">
+
+            <div class="grid-item-bg"></div>
+            <div class="grid-item-colorstrip"></div>
+            <h3 class="grid-item-h3">Подвеска</h3>
+            <img src="./img/svg/Frame 4.svg" alt="" class="grid-item-img">
+
+            <div class="grid-item-text">
+              <p>Вентиляторы отопителя</p>
+              <p>Насосы дополнительные</p>
+              <p>Насосы дополнительные</p>
+           </div>
+          </div>
+        </div>
+ <!-- Контент 9 -->        
+        <div class="grid-item">
+          <div class="grid-item-inner">
+
+            <div class="grid-item-bg"></div>
+            <div class="grid-item-colorstrip"></div>
+            <h3 class="grid-item-h3">Колеса и ступицы</h3>
+            <img src="./img/колеса и ступицы 1.png" alt="" class="grid-item-img">
+
+            <div class="grid-item-text">
+            <p>Вентиляторы охлаждения</p>
+            <p>Муфты вентилятора охлаждения</p>
+           </div>
+          </div>
+        </div>
+ <!-- Контент 10 -->        
+        <div class="grid-item">
+          <div class="grid-item-inner">
+
+            <div class="grid-item-bg"></div>
+            <div class="grid-item-colorstrip"></div>
+            <h3 class="grid-item-h3">Тормоза</h3>
+            <img src="./img/Тормоза 1.png" alt="" class="grid-item-img">
+
+            <div class="grid-item-text">
+            <p>Вентиляторы охлаждения</p>
+            <p>Муфты вентилятора охлаждения</p>
+           </div>
+          </div>
+        </div>
+ <!-- Контент 11 -->       
+        <div class="grid-item">
+          <div class="grid-item-inner">
+
+            <div class="grid-item-bg"></div>
+            <div class="grid-item-colorstrip"></div>
+            <h3 class="grid-item-h3">Рулевое управление</h3>
+            <img src="./img/svg/Рулевая-рейка 1.svg" alt="" class="grid-item-img">
+
+            <div class="grid-item-text">
+            <p>Ремкомплекты и подшипники ступиц</p>
+            <p>Насосы гидроусилителя руля</p>
+           </div>
+          </div>
+        </div>
+ <!-- Контент 12 -->        
+        <div class="grid-item">
+          <div class="grid-item-inner">
+
+            <div class="grid-item-bg"></div>
+            <div class="grid-item-colorstrip"></div>
+            <h3 class="grid-item-h3">Электро- оборудование</h3>
+            <img src="./img/svg/электрооборудование 1.svg" alt="" class="grid-item-img">
+
+            <div class="grid-item-text">
+              <p>Ремкомплекты и подшипники ступиц</p>
+              <p>Насосы гидроусилителя руля</p>
+           </div>
+          </div>
+        </div>
+ <!-- Контент 13 -->        
+        <div class="grid-item">
+          <div class="grid-item-inner">
+
+            <div class="grid-item-bg"></div>
+            <div class="grid-item-colorstrip"></div>
+            <h3 class="grid-item-h3">Отопление и вентияляция</h3>
+            <img src="./img/svg/Система-охлаждения 1.svg" alt="" class="grid-item-img">
+
+            <div class="grid-item-text">
+            <p>Вентиляторы отопителя</p>
+            <p>Насосы дополнительные</p>
+            <p>Ремкомплекты насосов</p>
+           </div>
+          </div>
+        </div>
+ <!-- Контент 14 -->        
+        <div class="grid-item">
+          <div class="grid-item-inner-last">
+
+            <h3 class="grid-item-h3-last">Каталог запасных частей</h3>
+            <img src="./img/svg/Сцепление 2.svg" alt="" class="grid-item-img-last">
+
+            <div class="grid-item-text">
+            <p>Карданные валы в сборе</p>
+            <p>Крестовины</p>
+            <p>Опоры карданного вала</p>
+           </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container_info">
+      <div class="container_slider2">
+        <div class="slider2">
+          <div class="slider2__wrapper">
+            <div class="slider2__items">
+              <div class="slider2__item">
+                <!-- Контент 1 слайда -->
+                <img src="./img/Group 439.png" alt="" class="">
+              </div>
+              <div class="slider2__item">
+                <!-- Контент 2 слайда -->
+                <img src="./img/IMG_4605 1.png " alt="" class="">
+              </div>
+              <div class="slider2__item">
+                <!-- Контент 3 слайда -->
+                3
+              </div>
+              <div class="slider2__item">
+                <!-- Контент 4 слайда -->
+                4
+              </div>
+              <div class="slider2__item">
+                <!-- Контент 5 слайда -->
+                5
+              </div>
+            </div>
+          </div>
+          <ol class="slider2__indicators">
+            <li data-slide-to="0"></li>
+            <li data-slide-to="1"></li>
+            <li data-slide-to="2"></li>
+            <li data-slide-to="3"></li>
+            <li data-slide-to="4"></li>
+          </ol>
+        </div>
+      </div>
+      <p class="info-headline-text">О компании</p>
+      <div class="info-main-text">
+        <p class="">На протяжении 6 лет компания «Автомастер» занимается поставками автозапчастей ГАЗ, УАЗ, ПАЗ, ВАЗ,
+          Камаз. Мы специализируемся на продвижение своего бренда ТМ PRAVT – сертифицированная торговая марка российской
+          компании. Наша география расширяется по всей России и ближнему зарубежью, мы стали узнаваемые.</p>
+        <p class=""></p>
+        <p class="">На сегодняшний день ассортимент нашей продукции более 600 позиций. С каждым годом прогресс
+          увеличения ассортимента составляет не менее чем на 35%. Производственные мощности, партнеры компании
+          расположены на территории КНР.</p>
+      </div>
+    </div>
+    <div class="popup">
+      <div class="popup_body">
+      <button id="close">&times;</button>
+      <img class="img-popup" src="img/Вентилятор 1.png" alt="Изображение">
+      </div>
+    </div>
+    <img src="./img/svg/bg.svg" alt="bg" class="bg">
+    <div class="element-animation">
+      <img src="./img/Безопасноcть.png" alt="">
+    </div>
+
+
+  </main class="main">
+</body>
+
+<script src="./js/popup-script.js"></script>
+<script src="./js/animation.js"></script>
+<button onclick="topFunction()" id="topBtn" class="top" title="Go to top">Вверх</button>
+</html>
